@@ -16,8 +16,8 @@ while True:
     data = r.json()
     toutes_les_data += data['results']
     total_count = data['total_count']
-    offset += step
-    if total_count - offset <= 0:
+    offset += len(toutes_les_data) + 1
+    if total_count - len(toutes_les_data) <= 0:
         break
     if offset + step > 10000:
         break
