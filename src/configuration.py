@@ -1,3 +1,5 @@
+import json
+
 import requests
 
 
@@ -8,8 +10,19 @@ class Configuration:
     def telecharger(self):
         raise NotImplementedError()
 
+    def print(self):
+        print("Configuration")
 
-class EconomieGouvConfiguration(Configuration):
+
+class BeautifulPrinter:
+    def __init__(self, input_config):
+        self.input_config = input_config
+
+    def print(self):
+        print(json.dumps(self.input_config, indent=4))
+
+
+class EconomieGouvConfiguration(BeautifulPrinter, Configuration):
     def __init__(self, input_config):
         super().__init__(input_config)
         self.type_api = self.input_config["type_api"]
@@ -59,3 +72,15 @@ class DataGouvConfiguration(Configuration):
             toutes_les_data += data['data']
             url = data['links'].get("next")
         return toutes_les_data
+
+
+test_dict = {
+    "type_api": "type_api",
+    "dataset": "dataset",
+    "fichier_cible": "fichier_cible",
+    "fichier_sql": "fichier_sql",
+    "sql_creation": "sql_creation",
+}
+
+economie = EconomieGouvConfiguration(test_dict)
+economie.print()
