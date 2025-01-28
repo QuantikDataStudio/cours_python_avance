@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from pydantic.dataclasses import dataclass
 
 import requests
 
@@ -39,6 +39,7 @@ class EconomieGouvConfiguration:
         return toutes_les_data
 
 
+@dataclass
 class DataGouvConfiguration:
     type_api: str
     dataset: str
