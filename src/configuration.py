@@ -20,7 +20,15 @@ class EconomieGouvConfiguration(Configuration):
         self.fichier_cible = self.input_config["fichier_cible"]
         self.fichier_sql = self.input_config["fichier_sql"]
         self.sql_creation = self.input_config["sql_creation"]
-        self.url = f"https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/{self.dataset}/records?select=id%2Clatitude%2Clongitude%2Ccp%2Cadresse%2Cville%2Cservices%2Cgazole_prix%2Cgazole_maj%2Choraires%2Csp95_maj%2Csp95_prix%2Csp98_maj%2Csp98_prix&limit={{step}}&offset={{offset}}"
+        self.select = self.input_config.get("select", [])
+
+    @property
+    def url(self):
+        if self.select:
+            select_param = "%2C".join(self.select)
+            return f"https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/{self.dataset}/records?select={select_param}&limit={{step}}&offset={{offset}}"
+        else:
+            return f"https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/{self.dataset}/records?limit={{step}}&offset={{offset}}"
 
     def telecharger(self):
         step = 100

@@ -3,7 +3,23 @@
     "type_api": "economie_gouv",
     "dataset": "prix-des-carburants-en-france-flux-instantane-v2",
     "fichier_cible": "../data/prix_instantane_carburant.json",
-    "fichier_sql": "prix_instantane_carburant.sql"
+    "fichier_sql": "prix_instantane_carburant.sql",
+    "select": [
+      "id",
+      "latitude",
+      "longitude",
+      "cp",
+      "adresse",
+      "ville",
+      "services",
+      "gazole_prix",
+      "gazole_maj",
+      "horaires",
+      "sp95_maj",
+      "sp95_prix",
+      "sp98_maj",
+      "sp98_prix"
+    ]
   },
   {
     "type_api": "data_gouv",
