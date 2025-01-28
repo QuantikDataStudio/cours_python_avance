@@ -1,26 +1,16 @@
-import abc
+from dataclasses import dataclass
 
 import requests
 
 
-class Configuration(abc.ABC):
-    def __init__(self, input_config):
-        self.input_config = input_config
-
-    @abc.abstractmethod
-    def telecharger(self):
-        pass
-
-
-class EconomieGouvConfiguration(Configuration):
-    def __init__(self, input_config):
-        super().__init__(input_config)
-        self.type_api = self.input_config["type_api"]
-        self.dataset = self.input_config["dataset"]
-        self.fichier_cible = self.input_config["fichier_cible"]
-        self.fichier_sql = self.input_config["fichier_sql"]
-        self.sql_creation = self.input_config["sql_creation"]
-        self.select = self.input_config.get("select", [])
+@dataclass
+class EconomieGouvConfiguration:
+    type_api: str
+    dataset: str
+    fichier_cible: str
+    fichier_sql: str
+    sql_creation: str
+    select: list
 
     @property
     def url(self):
@@ -49,15 +39,16 @@ class EconomieGouvConfiguration(Configuration):
         return toutes_les_data
 
 
-class DataGouvConfiguration(Configuration):
-    def __init__(self, input_config):
-        super().__init__(input_config)
-        self.type_api = self.input_config["type_api"]
-        self.dataset = self.input_config["dataset"]
-        self.fichier_cible = self.input_config["fichier_cible"]
-        self.fichier_sql = self.input_config["fichier_sql"]
-        self.sql_creation = self.input_config["sql_creation"]
-        self.url = f"https://tabular-api.data.gouv.fr/api/resources/{self.dataset}/data/?Date__exact='2024-10-31'"
+class DataGouvConfiguration:
+    type_api: str
+    dataset: str
+    fichier_cible: str
+    fichier_sql: str
+    sql_creation: str
+
+    @property
+    def url(self):
+        return f"https://tabular-api.data.gouv.fr/api/resources/{self.dataset}/data/?Date__exact='2024-10-31'"
 
     def telecharger(self):
         toutes_les_data = []
