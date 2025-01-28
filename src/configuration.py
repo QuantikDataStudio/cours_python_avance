@@ -1,12 +1,15 @@
+import abc
+
 import requests
 
 
-class Configuration:
+class Configuration(abc.ABC):
     def __init__(self, input_config):
         self.input_config = input_config
 
+    @abc.abstractmethod
     def telecharger(self):
-        raise NotImplementedError()
+        pass
 
 
 class EconomieGouvConfiguration(Configuration):
