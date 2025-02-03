@@ -1,10 +1,12 @@
 import json
 import logging
-
+import typing
 from configuration import EconomieGouvConfiguration, DataGouvConfiguration
 
+t = typing.List[typing.Union[EconomieGouvConfiguration, DataGouvConfiguration]]
 
-def lire_configuration(logger: logging.Logger) -> list:
+
+def lire_configuration(logger: logging.Logger) -> t:
     out = []
 
     logger.info("Lecture du fichier config.json")
