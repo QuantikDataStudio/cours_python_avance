@@ -1,9 +1,10 @@
 import json
+import logging
 
 from configuration import EconomieGouvConfiguration, DataGouvConfiguration
 
 
-def lire_configuration(logger):
+def lire_configuration(logger: logging.Logger) -> list:
     out = []
 
     logger.info("Lecture du fichier config.json")
@@ -29,6 +30,6 @@ def lire_configuration(logger):
     return out
 
 
-def retrouver_sql(nom_fichier):
+def retrouver_sql(nom_fichier: str) -> str:
     with open(f"sql/{nom_fichier}", "r") as f:
         return f.read()

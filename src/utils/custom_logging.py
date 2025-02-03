@@ -1,7 +1,7 @@
 import logging
 
 
-def setup_basic_logging(nom_logger, fichier_log):
+def setup_basic_logging(nom_logger: str, fichier_log: str) -> logging.Logger:
     logger = logging.getLogger(nom_logger)
     logging.basicConfig(
         level=logging.INFO,
@@ -14,7 +14,7 @@ def setup_basic_logging(nom_logger, fichier_log):
     return logger
 
 
-def setup_advanced_logging(nom_logger, fichier_log):
+def setup_advanced_logging(nom_logger: str, fichier_log: str) -> logging.Logger:
     logger = logging.getLogger(nom_logger)
     logger.setLevel(logging.DEBUG)
 
@@ -35,9 +35,8 @@ def setup_advanced_logging(nom_logger, fichier_log):
     return logger
 
 
-
 if __name__ == '__main__':
-    log = setup_advanced_logging("advanced")
+    log = setup_advanced_logging("advanced", "fichier")
     log.debug("message debug")
     log.info("message info")
     log.warning("message warning")

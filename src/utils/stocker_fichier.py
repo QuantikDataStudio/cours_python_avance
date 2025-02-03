@@ -1,8 +1,9 @@
 import json
 
 
-def stocker_fichier(donnes, nom_fichier):
+def stocker_fichier(donnees: list, nom_fichier: str) -> None:
     print("Stockage dans le fichier")
+
     with open(nom_fichier, "w") as f:
-        for line in donnes:
+        for line in donnees:
             json.dump(line, f)
