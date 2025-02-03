@@ -79,7 +79,7 @@ class DataGouvConfiguration:
     def url(self):
         return f"https://tabular-api.data.gouv.fr/api/resources/{self.dataset}/data/?Date__exact='2024-10-31'"
 
-    def telecharger(self, logger):
+    def telecharger(self):
         toutes_les_data = []
         url = self.url
         print("Télécharger les données")
