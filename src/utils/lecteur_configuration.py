@@ -35,3 +35,15 @@ def lire_configuration(logger: logging.Logger) -> t:
 def retrouver_sql(nom_fichier: str) -> str:
     with open(f"sql/{nom_fichier}", "r") as f:
         return f.read()
+
+
+if __name__ == '__main__':
+    import os
+    os.chdir("../")
+    contenu_fichier = retrouver_sql("test_sql.sql")
+    resultat_attendu = 'test sql'
+
+    if contenu_fichier == resultat_attendu:
+        print("Test ok")
+    else:
+        Exception("Test not ok")

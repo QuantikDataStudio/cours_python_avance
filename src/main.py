@@ -14,7 +14,7 @@ logger_main = setup_advanced_logging("main_pipeline", "../logs/main.log")
 logger_lecteur_config = setup_advanced_logging("lecteur_config", "../logs/main.log")
 
 
-if __name__ == '__main__':
+def main():
     logger_main.info("lecture configuration")
     configuration = lire_configuration(logger_lecteur_config)
 
@@ -31,3 +31,9 @@ if __name__ == '__main__':
 
         logger_main.debug("Stockage dans la BDD")
         stocker_dans_bdd(config.sql_creation, config.fichier_cible, fichier_base_de_donnees)
+
+
+if __name__ == '__main__':
+    main()
+
+

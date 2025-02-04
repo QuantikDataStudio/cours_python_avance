@@ -30,6 +30,7 @@ def requests_get(url: str, max_retries: int = 3) -> requests.Response:
                 continue
     return r
 
+
 @dataclass
 class EconomieGouvConfiguration:
     type_api: str
@@ -88,3 +89,21 @@ class DataGouvConfiguration:
             toutes_les_data += data['data']
             url = data['links'].get("next")
         return toutes_les_data
+
+
+if __name__ == '__main__':
+    instance = EconomieGouvConfiguration(
+        type_api="type_api",
+        dataset="dataset",
+        fichier_cible="fichier_cible",
+        fichier_sql="fichier_sql",
+        sql_creation="sql_creation",
+        select=["select"]
+    )
+
+    resultat_url = instance.url
+    url_attendue = "https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/dataset/records?select=select&limit={step}&offset={offset}"
+    if resultat_url == url_attendue:
+        print("test ok")
+    else:
+        raise Exception("Test not ok")
