@@ -1,4 +1,3 @@
-*.xml
-*.iml
+.idea/*
 data/bdd_cours_python_avance
 data/*.json
