@@ -1,0 +1,4 @@
+*.xml
+*.iml
+data/bdd_cours_python_avance
+data/*.json
