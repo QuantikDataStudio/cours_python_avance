@@ -25,7 +25,7 @@ class EconomieGouvConfiguration(Configuration):
         toutes_les_data = []
         print("Télécharger les données")
         while True:
-            r = requests.get(self.url.format(limit=step, offset=offset))
+            r = requests.get(self.url.format(step=step, offset=offset))
             r.raise_for_status()
             data = r.json()
             toutes_les_data += data['results']
