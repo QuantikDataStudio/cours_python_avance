@@ -15,6 +15,7 @@ def requests_get(url, max_retries=3):
         try:
             r = requests.get(url)
             r.raise_for_status()
+            break
         except requests.exceptions.ConnectionError:
             error_count += 1
             if error_count > max_retries:
@@ -54,7 +55,7 @@ class EconomieGouvConfiguration:
         toutes_les_data = []
         print("Télécharger les données")
         while True:
-            r = requests_get(self.url.format(limit=step, offset=offset), 3)
+            r = requests_get(self.url.format(step=step, offset=offset), 3)
             data = r.json()
             toutes_les_data += data['results']
             total_count = data['total_count']
