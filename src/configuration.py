@@ -1,4 +1,3 @@
-from datetime import date
 from time import sleep
 from urllib.error import HTTPError
 from pydantic.dataclasses import dataclass
