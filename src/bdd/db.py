@@ -1,11 +1,11 @@
 import duckdb
 
 
-def stocker_dans_bdd(sql: str, fichier: str, bdd: str) -> None:
+def stocker_dans_bdd(sql: str, fichier: str, bdd: str, nom_table: str) -> None:
     print("Chargement dans la BDD")
     with duckdb.connect(bdd) as connection:
         connection.sql(sql)
-        connection.sql('INSERT INTO consommation_brute_quotidienne_gaz_elec_raw '
+        connection.sql(f'INSERT INTO {nom_table} '
                        f'SELECT * FROM read_json_auto("{fichier}")')
 
 
