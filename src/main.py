@@ -10,4 +10,5 @@ configuration = lire_configuration()
 for config in configuration:
     resultat = config.telecharger()
     stocker_fichier(resultat, config.fichier_cible)
-    stocker_dans_bdd(config.sql_creation, config.fichier_cible, fichier_base_de_donnees)
+    nom_table = config.fichier_sql.split("/")[-1].split(".")[0]
+    stocker_dans_bdd(config.sql_creation, config.fichier_cible, fichier_base_de_donnees, nom_table)
