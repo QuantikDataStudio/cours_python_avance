@@ -38,4 +38,5 @@ def telecharger_donnes_conso_gaz_elec(url):
 
 resultat = telecharger_donnes_conso_gaz_elec(url_api)
 stocker_fichier(resultat, fichier_cible)
-stocker_dans_bdd(sql_creation, fichier_cible, fichier_base_de_donnees)
+nom_table = "consommation_brute_quaotidienne_gaz_elec"
+stocker_dans_bdd(sql_creation, fichier_cible, fichier_base_de_donnees, nom_table)

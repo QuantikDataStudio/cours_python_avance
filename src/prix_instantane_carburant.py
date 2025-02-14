@@ -47,4 +47,5 @@ def telecharger_donnes_prix_carburant(url):
 
 resultat = telecharger_donnes_prix_carburant(url_api)
 stocker_fichier(resultat, fichier_cible)
-stocker_dans_bdd(sql_creation, fichier_cible, fichier_base_de_donnees)
+nom_table = "prix_instantane_carburant"
+stocker_dans_bdd(sql_creation, fichier_cible, fichier_base_de_donnees, nom_table)
