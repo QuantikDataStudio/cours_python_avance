@@ -1,4 +1,5 @@
-from contextlib import contextmanager
+from contextlib import nullcontext as does_not_raise
+
 import logging
 from json import JSONDecodeError
 
@@ -6,9 +7,6 @@ import pytest
 
 from utils.lecteur_configuration import retrouver_sql, lire_configuration
 
-@contextmanager
-def does_not_raise():
-    yield
 
 @pytest.mark.parametrize(
     "nom_fichier, resultat, expectation",
