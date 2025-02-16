@@ -118,3 +118,18 @@ def dataset_fichier_inexistant_fixture():
         "nom_table": "table_test",
         "expected": [(1,), (2,)]
     }
+
+
+@pytest.fixture
+def input_incorrect_json_dump():
+    return [{1, 2}]
+
+
+@pytest.fixture
+def test_fichier():
+    yield "fichier_temp"
+    os.unlink("fichier_temp")
+
+@pytest.fixture
+def input_correct_json():
+    return [{"a": 1}, {"a": 2}]
