@@ -9,5 +9,5 @@ def stocker_dans_bdd(sql: str, fichier: str, bdd: str, nom_table: str) -> None:
                        f'SELECT * FROM read_json_auto("{fichier}")')
 
 
-if __name__ == '__main__':
+if __name__ == '__main__': # pragma: no cover
     print("ceci est un test de stocker_dans_bdd")
