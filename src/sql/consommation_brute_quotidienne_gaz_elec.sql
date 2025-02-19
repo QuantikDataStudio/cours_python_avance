@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS consommation_brute_quotidienne_gaz_elec_raw (
+CREATE TABLE IF NOT EXISTS consommation_brute_quotidienne_gaz_elec (
     "__id" INT,
     "Date - Heure" TIMESTAMP,
     "Date" DATE,

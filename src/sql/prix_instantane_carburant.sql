@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS prix_instante_raw (
+CREATE TABLE IF NOT EXISTS prix_instantane_carburant (
     id INT,
     latitude FLOAT,
     longitude FLOAT,
