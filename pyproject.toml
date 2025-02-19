@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "cours_python_avance"
+version = "0.1.0"
+description = "Pipeline de data pour le cours python avancé de Ada"
+authors = ["La Team Ada <contact@ada-study.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+requests = "2.32.3"
+duckdb = "1.2.0"
+pydantic = "2.10.6"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "8.3.4"
+pytest-cov = "6.0.0"
+coverage = "7.6.12"
