@@ -1,7 +1,8 @@
 import json
 import logging
 import typing
-from configuration import EconomieGouvConfiguration, DataGouvConfiguration
+
+from configuration import DataGouvConfiguration, EconomieGouvConfiguration
 
 t = typing.List[typing.Union[EconomieGouvConfiguration, DataGouvConfiguration]]
 

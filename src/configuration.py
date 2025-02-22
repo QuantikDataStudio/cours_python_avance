@@ -1,8 +1,8 @@
 from time import sleep
 from urllib.error import HTTPError
-from pydantic.dataclasses import dataclass
 
 import requests
+from pydantic.dataclasses import dataclass
 
 
 def requests_get(

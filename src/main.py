@@ -1,7 +1,7 @@
-from utils.stocker_fichier import stocker_fichier
-from utils.lecteur_configuration import lire_configuration
 from bdd.db import stocker_dans_bdd
 from utils.custom_logging import setup_advanced_logging
+from utils.lecteur_configuration import lire_configuration
+from utils.stocker_fichier import stocker_fichier
 
 fichier_base_de_donnees = "../data/bdd_cours_python_avance"
 
