@@ -1,11 +1,10 @@
-from contextlib import nullcontext as does_not_raise
-
 import logging
+from contextlib import nullcontext as does_not_raise
 from json import JSONDecodeError
 
 import pytest
 
-from utils.lecteur_configuration import retrouver_sql, lire_configuration
+from utils.lecteur_configuration import lire_configuration, retrouver_sql
 
 
 @pytest.mark.parametrize(

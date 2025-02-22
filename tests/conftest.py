@@ -4,7 +4,7 @@ import os
 import duckdb
 import pytest
 
-from configuration import EconomieGouvConfiguration, DataGouvConfiguration
+from configuration import DataGouvConfiguration, EconomieGouvConfiguration
 
 
 @pytest.fixture

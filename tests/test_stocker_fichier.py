@@ -1,7 +1,8 @@
+from contextlib import nullcontext as does_not_raise
+
 import pytest
 
 from utils.stocker_fichier import stocker_fichier
-from contextlib import nullcontext as does_not_raise
 
 
 @pytest.mark.parametrize(

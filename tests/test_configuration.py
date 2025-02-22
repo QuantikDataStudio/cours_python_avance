@@ -3,7 +3,7 @@ from contextlib import nullcontext as does_not_raise
 import pytest
 from pydantic import ValidationError
 
-from configuration import EconomieGouvConfiguration, DataGouvConfiguration
+from configuration import DataGouvConfiguration, EconomieGouvConfiguration
 
 
 @pytest.mark.parametrize(
