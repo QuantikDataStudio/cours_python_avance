@@ -8,7 +8,7 @@ t = typing.List[typing.Union[EconomieGouvConfiguration, DataGouvConfiguration]]
 
 
 def lire_configuration(fichier_config: str, logger: logging.Logger) -> t:
-    out = []
+    out: list[EconomieGouvConfiguration | DataGouvConfiguration] = []
 
     logger.info("Lecture du fichier config.json")
     with open(fichier_config, "r") as f:
