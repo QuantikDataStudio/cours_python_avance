@@ -14,13 +14,15 @@ logger_main = setup_advanced_logging("main_pipeline", "../logs/main.log")
 logger_lecteur_config = setup_advanced_logging("lecteur_config", "../logs/main.log")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     logger_main.info("lecture configuration")
     configuration = lire_configuration("config.json", logger_lecteur_config)
 
     logger_main.info("Telechargement et stockage")
     for config in configuration:
-        logger_main.debug(f"Telechargement de {config.type_api}, dataset {config.dataset}")
+        logger_main.debug(
+            f"Telechargement de {config.type_api}, dataset {config.dataset}"
+        )
 
         resultat = config.telecharger()
 
@@ -31,4 +33,9 @@ if __name__ == '__main__':
 
         logger_main.debug("Stockage dans la BDD")
         nom_table = config.fichier_sql.split("/")[-1].split(".")[0]
-        stocker_dans_bdd(config.sql_creation, config.fichier_cible, fichier_base_de_donnees, nom_table)
+        stocker_dans_bdd(
+            config.sql_creation,
+            config.fichier_cible,
+            fichier_base_de_donnees,
+            nom_table,
+        )

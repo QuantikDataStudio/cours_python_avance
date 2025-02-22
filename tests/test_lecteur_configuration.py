@@ -12,8 +12,8 @@ from utils.lecteur_configuration import retrouver_sql, lire_configuration
     "nom_fichier, resultat, expectation",
     [
         ("fixtures/sql/test_sql", "select_fixture", does_not_raise()),
-        ("nom_fichier", None, pytest.raises(FileNotFoundError))
-    ]
+        ("nom_fichier", None, pytest.raises(FileNotFoundError)),
+    ],
 )
 def test_retrouver_sql(request, nom_fichier, resultat, expectation):
     with expectation:
@@ -29,10 +29,9 @@ def test_retrouver_sql(request, nom_fichier, resultat, expectation):
         ("fixtures/economie_gouv.json", "economie_gouv_fixture", does_not_raise()),
         ("fixtures/data_gouv.json", "data_gouv_fixture", does_not_raise()),
         ("fixtures/data_type_inconnu.json", None, pytest.raises(ValueError)),
-    ]
+    ],
 )
 def test_lire_configuration(request, nom_fichier, resultat, expectation):
     with expectation:
         out = lire_configuration(nom_fichier, logging.getLogger("name"))
         assert out == request.getfixturevalue(resultat)
-

@@ -21,48 +21,55 @@ def economie_gouv_fixture():
             fichier_cible="fichier_cible",
             fichier_sql="fixtures/sql/test_sql",
             sql_creation="SELECT",
-            select=["id"]
+            select=["id"],
         )
     ]
 
 
 @pytest.fixture
 def input_economie_gouv_fixture_select_vide():
-    return {"type_api": "economie_gouv",
-            "dataset": "dataset",
-            "fichier_cible": "fichier_cible",
-            "fichier_sql": "fixtures/sql/test_sql",
-            "sql_creation": "SELECT",
-            "select": []}
+    return {
+        "type_api": "economie_gouv",
+        "dataset": "dataset",
+        "fichier_cible": "fichier_cible",
+        "fichier_sql": "fixtures/sql/test_sql",
+        "sql_creation": "SELECT",
+        "select": [],
+    }
 
 
 @pytest.fixture
 def input_economie_gouv_fixture_sans_select():
-    return {"type_api": "economie_gouv",
-            "dataset": "dataset",
-            "fichier_cible": "fichier_cible",
-            "fichier_sql": "fixtures/sql/test_sql",
-            "sql_creation": "SELECT"}
+    return {
+        "type_api": "economie_gouv",
+        "dataset": "dataset",
+        "fichier_cible": "fichier_cible",
+        "fichier_sql": "fixtures/sql/test_sql",
+        "sql_creation": "SELECT",
+    }
 
 
 @pytest.fixture
 def input_economie_gouv_fixture_avec_select():
-    return {"type_api": "economie_gouv",
-            "dataset": "dataset",
-            "fichier_cible": "fichier_cible",
-            "fichier_sql": "fixtures/sql/test_sql",
-            "sql_creation": "SELECT",
-            "select": ["id1", "id2"]}
+    return {
+        "type_api": "economie_gouv",
+        "dataset": "dataset",
+        "fichier_cible": "fichier_cible",
+        "fichier_sql": "fixtures/sql/test_sql",
+        "sql_creation": "SELECT",
+        "select": ["id1", "id2"],
+    }
 
 
 @pytest.fixture
 def input_data_gouv_fixture():
-    return {"type_api": "data_gouv",
-            "dataset": "dataset",
-            "fichier_cible": "fichier_cible",
-            "fichier_sql": "fixtures/sql/test_sql",
-            "sql_creation": "SELECT"
-            }
+    return {
+        "type_api": "data_gouv",
+        "dataset": "dataset",
+        "fichier_cible": "fichier_cible",
+        "fichier_sql": "fixtures/sql/test_sql",
+        "sql_creation": "SELECT",
+    }
 
 
 @pytest.fixture
@@ -106,8 +113,9 @@ def dataset_correct_fixture():
         "fichier": "fixtures/donnees_tests.json",
         "bdd": "random_db.db",
         "nom_table": "table_test",
-        "expected": [(1,), (2,)]
+        "expected": [(1,), (2,)],
     }
+
 
 @pytest.fixture
 def dataset_fichier_inexistant_fixture():
@@ -116,7 +124,7 @@ def dataset_fichier_inexistant_fixture():
         "fichier": "donnees_tests.json",
         "bdd": "random_db.db",
         "nom_table": "table_test",
-        "expected": [(1,), (2,)]
+        "expected": [(1,), (2,)],
     }
 
 
@@ -129,6 +137,7 @@ def input_incorrect_json_dump():
 def test_fichier():
     yield "fichier_temp"
     os.unlink("fichier_temp")
+
 
 @pytest.fixture
 def input_correct_json():
