@@ -30,6 +30,7 @@ class EconomieGouvConfiguration(BeautifulPrinter, Configuration):
         self.fichier_cible = self.input_config["fichier_cible"]
         self.fichier_sql = self.input_config["fichier_sql"]
         self.sql_creation = self.input_config["sql_creation"]
+        self.nom_table = self.input_config["nom_table"]
         self.url = f"https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/{self.dataset}/records?select=id%2Clatitude%2Clongitude%2Ccp%2Cadresse%2Cville%2Cservices%2Cgazole_prix%2Cgazole_maj%2Choraires%2Csp95_maj%2Csp95_prix%2Csp98_maj%2Csp98_prix&limit={{step}}&offset={{offset}}"
 
     def telecharger(self):
@@ -59,6 +60,7 @@ class DataGouvConfiguration(Configuration):
         self.fichier_cible = self.input_config["fichier_cible"]
         self.fichier_sql = self.input_config["fichier_sql"]
         self.sql_creation = self.input_config["sql_creation"]
+        self.nom_table = self.input_config["nom_table"]
         self.url = f"https://tabular-api.data.gouv.fr/api/resources/{self.dataset}/data/?Date__exact='2024-10-31'"
 
     def telecharger(self):
