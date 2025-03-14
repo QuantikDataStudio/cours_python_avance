@@ -30,7 +30,7 @@ def main():
         stocker_fichier(resultat, config.fichier_cible)
 
         logger_main.debug("Stockage dans la BDD")
-        nom_table = config.fichier_sql.split("/")[-1].split(".")[0]
+        nom_table = config.nom_table
         stocker_dans_bdd(config.sql_creation, config.fichier_cible, fichier_base_de_donnees, nom_table)
 
 
