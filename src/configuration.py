@@ -11,6 +11,7 @@ class EconomieGouvConfiguration:
     fichier_sql: str
     sql_creation: str
     select: list
+    nom_table: str
 
     @property
     def url(self):
@@ -46,6 +47,7 @@ class DataGouvConfiguration:
     fichier_cible: str
     fichier_sql: str
     sql_creation: str
+    nom_table: str
 
     @property
     def url(self):
