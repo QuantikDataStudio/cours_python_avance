@@ -20,6 +20,7 @@ class EconomieGouvConfiguration(Configuration):
         self.fichier_cible = self.input_config["fichier_cible"]
         self.fichier_sql = self.input_config["fichier_sql"]
         self.sql_creation = self.input_config["sql_creation"]
+        self.nom_table = self.input_config["nom_table"]
         self.select = self.input_config.get("select", [])
 
     @property
@@ -57,6 +58,7 @@ class DataGouvConfiguration(Configuration):
         self.fichier_cible = self.input_config["fichier_cible"]
         self.fichier_sql = self.input_config["fichier_sql"]
         self.sql_creation = self.input_config["sql_creation"]
+        self.nom_table = self.input_config["nom_table"]
         self.url = f"https://tabular-api.data.gouv.fr/api/resources/{self.dataset}/data/?Date__exact='2024-10-31'"
 
     def telecharger(self):
