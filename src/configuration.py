@@ -40,6 +40,7 @@ class EconomieGouvConfiguration:
         return toutes_les_data
 
 
+@dataclass
 class DataGouvConfiguration:
     type_api: str
     dataset: str
