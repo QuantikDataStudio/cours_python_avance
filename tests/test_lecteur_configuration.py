@@ -36,7 +36,8 @@ def test_retrouver_sql(nom_fichier, resultat, expectation):
                 fichier_cible="fichier_cible",
                 fichier_sql="fixtures/sql/test_sql",
                 sql_creation="SELECT",
-                select=["id"]
+                select=["id"],
+                nom_table="nom_table"
             )
         ], does_not_raise()),
         ("fixtures/data_gouv.json", [
@@ -46,6 +47,7 @@ def test_retrouver_sql(nom_fichier, resultat, expectation):
                 fichier_cible="fichier_cible",
                 fichier_sql="fixtures/sql/test_sql",
                 sql_creation="SELECT",
+                nom_table="nom_table"
             )
         ], does_not_raise()),
         ("fixtures/data_type_inconnu.json", None, pytest.raises(ValueError)),
