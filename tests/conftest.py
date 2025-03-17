@@ -19,7 +19,8 @@ def economie_gouv_fixture():
                 fichier_cible="fichier_cible",
                 fichier_sql="fixtures/sql/test_sql",
                 sql_creation="SELECT",
-                select=["id"]
+                nom_table="nom_table",
+                select=["id"],
             )
         ]
 
@@ -37,6 +38,7 @@ def data_gouv_fixture():
                 fichier_cible="fichier_cible",
                 fichier_sql="fixtures/sql/test_sql",
                 sql_creation="SELECT",
+                nom_table="nom_table"
             )
         ]
 

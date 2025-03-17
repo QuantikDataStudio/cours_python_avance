@@ -6,6 +6,7 @@
     "fichier_sql": "fixtures/sql/test_sql",
     "select": [
       "id"
-    ]
+    ],
+    "nom_table": "nom_table"
   }
 ]
