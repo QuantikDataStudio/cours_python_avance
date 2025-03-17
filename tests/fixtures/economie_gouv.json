@@ -3,6 +3,7 @@
     "type_api": "economie_gouv",
     "dataset": "dataset",
     "fichier_cible": "fichier_cible",
+    "nom_table": "nom_table",
     "fichier_sql": "fixtures/sql/test_sql",
     "select": [
       "id"
