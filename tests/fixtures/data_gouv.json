@@ -3,6 +3,8 @@
     "type_api": "data_gouv",
     "dataset": "dataset",
     "fichier_cible": "fichier_cible",
-    "fichier_sql": "fixtures/sql/test_sql"
+    "fichier_sql": "fixtures/sql/test_sql",
+    "nom_table": "nom_table"
+
   }
 ]
