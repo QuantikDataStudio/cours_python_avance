@@ -17,3 +17,4 @@ def test_stocker_fichier(request, input_fix, resultat, expectation, test_fichier
 
         with open(test_fichier, "r") as f:
             assert resultat == f.read()
+w
