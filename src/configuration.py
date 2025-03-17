@@ -101,7 +101,8 @@ if __name__ == '__main__':
         fichier_cible="fichier_cible",
         fichier_sql="fichier_sql",
         sql_creation="sql_creation",
-        select=["select"]
+        select=["select"],
+        nom_table="nom_table"
     )
 
     resultat_url = instance.url
