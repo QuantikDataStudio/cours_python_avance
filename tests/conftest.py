@@ -21,6 +21,7 @@ def economie_gouv_fixture():
             fichier_cible="fichier_cible",
             fichier_sql="fixtures/sql/test_sql",
             sql_creation="SELECT",
+            nom_table="nom_table",
             select=["id"]
         )
     ]
@@ -33,6 +34,7 @@ def input_economie_gouv_fixture_select_vide():
             "fichier_cible": "fichier_cible",
             "fichier_sql": "fixtures/sql/test_sql",
             "sql_creation": "SELECT",
+            "nom_table": "nom_table",
             "select": []}
 
 
@@ -42,6 +44,7 @@ def input_economie_gouv_fixture_sans_select():
             "dataset": "dataset",
             "fichier_cible": "fichier_cible",
             "fichier_sql": "fixtures/sql/test_sql",
+            "nom_table": "nom_table",
             "sql_creation": "SELECT"}
 
 
@@ -51,6 +54,7 @@ def input_economie_gouv_fixture_avec_select():
             "dataset": "dataset",
             "fichier_cible": "fichier_cible",
             "fichier_sql": "fixtures/sql/test_sql",
+            "nom_table": "nom_table",
             "sql_creation": "SELECT",
             "select": ["id1", "id2"]}
 
@@ -61,7 +65,8 @@ def input_data_gouv_fixture():
             "dataset": "dataset",
             "fichier_cible": "fichier_cible",
             "fichier_sql": "fixtures/sql/test_sql",
-            "sql_creation": "SELECT"
+            "sql_creation": "SELECT",
+            "nom_table": "nom_table"
             }
 
 
@@ -79,6 +84,7 @@ def data_gouv_fixture():
             fichier_cible="fichier_cible",
             fichier_sql="fixtures/sql/test_sql",
             sql_creation="SELECT",
+            nom_table="nom_table"
         )
     ]
 
@@ -108,6 +114,7 @@ def dataset_correct_fixture():
         "nom_table": "table_test",
         "expected": [(1,), (2,)]
     }
+
 
 @pytest.fixture
 def dataset_fichier_inexistant_fixture():
